@@ -1,15 +1,4 @@
-import {
-  Button,
-  HStack,
-  Image,
-  Menu,
-  MenuItem,
-  Portal,
-  Text,
-  Input,
-  InputGroup,
-  Kbd,
-} from "@chakra-ui/react";
+import { Button, HStack, Image, Menu, MenuItem, Portal, Text, Input, InputGroup, Kbd} from "@chakra-ui/react";
 import { LuSearch } from "react-icons/lu";
 import logo from "../assets/bonglua.png";
 import platforms from "./data/platforms";
@@ -21,8 +10,8 @@ interface NavBarProps {
 }
 
 const NavBar = ({ onSelectPlatform, onSearch }: NavBarProps) => {
-  const [selectedPlatformName, setSelectedPlatformName] = useState<string>(""); // tên platform
-  const [searchValue, setSearchValue] = useState(""); // text search
+  const [selectedPlatformName, setSelectedPlatformName] = useState<string>("");
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSelect = (slug: string, name: string) => {
     setSelectedPlatformName(name);
@@ -38,7 +27,6 @@ const NavBar = ({ onSelectPlatform, onSearch }: NavBarProps) => {
   return (
     <HStack justify={"space-between"} width={"100%"} p={4}>
       <HStack gap={4}>
-        {/* Logo */}
         <Image src={logo} alt="Logo" boxSize={"60px"} objectFit={"contain"} />
 
         <Text fontWeight="bold">Navigation Bar</Text>
@@ -53,7 +41,6 @@ const NavBar = ({ onSelectPlatform, onSearch }: NavBarProps) => {
           />
         </InputGroup>
 
-        {/* Dropdown chọn platform */}
         <Menu.Root>
           <Menu.Trigger asChild>
             <Button size="sm" variant="outline">

@@ -16,7 +16,6 @@ interface GameGridProps {
 }
 
 const GameGrid = ({ platformSelected, searchValue, ordering, genre }: GameGridProps) => {
-  // Pass all filter params to useGames
   const { games, error, loading } = useGames({
     platform: platformSelected,
     search: searchValue,
